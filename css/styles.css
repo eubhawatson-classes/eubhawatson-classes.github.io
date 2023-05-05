@@ -10,7 +10,8 @@
     max-width: 65ch;
 }
 
-.scrollspy {
-    max-height: calc(100vh - 8rem);
-    overflow-y: scroll;
+.btn-contents {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
 }
