@@ -1,18 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Course Resources</title>
+        <title>DMIT Course Resources: PHP/MySQL</title>
+
+        <!-- Meta Information -->
+        <meta name="author" content="Valerie Watson">
+        <meta name="description"
+            content="Welcome to a collection of notes, code snippets, and tutorials, meant to act as supplementary resources for students in the Digital Media & IT programme at NAIT.">
 
         <!-- Bootstrap Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="css/styles.css">
     </head>
 
     <body class="d-flex flex-column min-vh-100 justify-content-between">
-        <header>
+        <header class="sticky-top">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
                 <div class="container">
                     <a class="navbar-brand" href="index.html">Course Resources <i class="bi bi-pencil"></i> </a>
@@ -45,178 +53,416 @@
                 </div>
             </nav>
         </header>
-        <main class="container py-5">
-            <section class="pb-5">
-                <h1>DMIT2025: PHP/MySQL</h1>
-                <p>This course serves as an introduction to PHP, MySQL, MariaDB, and working with server-side languages
-                    in general. Building upon programming fundamentals, relational database concepts, and front-end web
-                    development basics, students will begin to build CRUD applications.</p>
-            </section>
+        <main>
             <section>
-                <h2>Table of Contents</h2>
-                <nav>
-                    <ul>
-                        <li><a href="#"></a></li>
-                    </ul>
-                </nav>
+                <div class="banner py-5 mb-5">
+                    <div class="container text-white py-5">
+                        <h1 class="display-1">DMIT2025: PHP/MySQL</h1>
+                        <p class="lead">This course serves as an introduction to PHP, MySQL, MariaDB, and working with
+                            server-side languages in general. Building upon programming fundamentals, relational
+                            database concepts, and front-end web development basics, students will begin to build CRUD
+                            applications.</p>
+                    </div>
+                </div>
             </section>
-            <hr>
-            <section class="py-5">
-                <h2 id="php-basics">PHP Basics</h2>
-                <p>PHP is a programming language that allows you to add back-end functionality to your web applications
-                    and to create dynamic websites. It will often work alongside other languages that you have already
-                    learned, such as HTML, CSS, JavaScript, and SQL. </p>
-                <p>PHP is a <strong>server-side language</strong>, which means that a server (or a remote computer) runs
-                    the PHP script and spits out the results to the user&#39;s browser. Because this processing is all
-                    done on the &#39;back-end&#39; (unlike HTML, CSS, and JavaScript), the user cannot see the code and
-                    its underlying logic.</p>
-                <p>This means that we can write more secure code. Because everything is not exposed in the browser, we
-                    can start handling things like passwords and sensitive data. It also means that we can start making
-                    certain HTML components, like forms, have some sort of functionality. We can finally take user
-                    input, process it, and <em>do something</em> with it.</p>
 
-                <h3 id="getting-started" class="pt-4">Getting Started</h3>
-                <p>So, what do we need in order to make PHP work? </p>
-                <ol>
-                    <li>We need a PHP-enabled server. This means that a PHP engine must be installed on it.
-                    </li>
-                    <li>In order for PHP to be processed, it must be written in a file with the <code>.php</code>
-                            file extension; it will not work inside of a <code>.html</code> file.
-                    </li>
-                    <li>All PHP must go between <code>&lt;?php ?&gt;</code> tags; otherwise, it will be treated as
-                            HTML.
-                    </li>
-                </ol>
-                </section>
-                <hr>
-                <section class="py-5">
-                <h2 id="variables">Variables</h2>
-                <p>Variables are a way of storing something (a value) so that we can reference or do something with it
-                    later. In PHP, we can store names, numbers, and all sorts of important data. </p>
-                <p>In PHP, all variables must start with a <code>$</code>, followed by a letter or an underscore, then
-                    an alphanumeric character string.</p>
-                <pre><code class="lang-PHP">    $name = <span class="hljs-string">'Jack Pott'</span><span class="hljs-comment">;</span>
-    $age = <span class="hljs-number">42</span><span class="hljs-comment">;</span>
-</code></pre>
-                <p>In this example, PHP knows that <code>$name</code> is actually <code>Jack Pott</code> because it has
-                    been <strong>assigned</strong> that value with the equals sign.</p>
-                <p>We can change or manipulate these values later on in the program, hence the name <em>variables</em>;
-                    however, PHP also has something called <strong>constants</strong>, which is a variable whose value
-                    is immutable or cannot be changed at runtime. </p>
-                <pre><code class="lang-PHP">    <span class="hljs-class"><span class="hljs-keyword">define</span></span>(<span class="hljs-string">'AGE'</span>, <span class="hljs-number">42</span>);
-</code></pre>
-                <p>Note that constants are case-sensitive and must be all uppercase. </p>
-                <h3 id="reserved-words">Reserved Words</h3>
-                <p>When initialising a variable or defining a constant, keep in mind that there&#39;s a set of
-                    predefined values that developers cannot use. These are known as the language&#39;s reserved words
-                    or predefined variables. </p>
-                <p><a href="https://www.php.net/manual/en/reserved.constants.php">See Reserved Words in PHP</a></p>
-                <hr>
-                <h2 id="data-types-in-php">Data Types in PHP</h2>
-                <p>Computers are very specific about how different types of data are treated. In some programming
-                    languages, when you delare or initialise a variable, you need to explicitly state what type of data
-                    you want, how many characters it should be, or sometimes even how much memory should be reserved for
-                    it. </p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Data Type</th>
-                            <th>Definition</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Characters</td>
-                            <td>Single letters, numbers, or symbols (i.e. glyphs).</td>
-                        </tr>
-                        <tr>
-                            <td>Strings</td>
-                            <td>A collection of characters.</td>
-                        </tr>
-                        <tr>
-                            <td>Integers</td>
-                            <td>Whole number values. Can use math with them.</td>
-                        </tr>
-                        <tr>
-                            <td>Floats</td>
-                            <td>Decimal number values.</td>
-                        </tr>
-                        <tr>
-                            <td>Booleans</td>
-                            <td>A value that can only be TRUE or FALSE.</td>
-                        </tr>
-                        <tr>
-                            <td>Array</td>
-                            <td>A collection of data that can either be numbered (indexed) or act as key-value pairs
-                                (associated).</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>Fortunately, PHP handles most of this for us. It will figure out what a variable is and how we want
-                    to use it for us. Therefore, we call PHP a <strong>weak type language</strong>. </p>
-                <hr>
-                <h2 id="basic-arithmetic">Basic Arithmetic</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Type of Operation</th>
-                            <th>Symbol (Operator)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Addition</td>
-                            <td>+</td>
-                        </tr>
-                        <tr>
-                            <td>Subtraction</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Multiplication</td>
-                            <td>*</td>
-                        </tr>
-                        <tr>
-                            <td>Division</td>
-                            <td>/</td>
-                        </tr>
-                        <tr>
-                            <td>Modulus</td>
-                            <td>%</td>
-                        </tr>
-                        <tr>
-                            <td>Exponentiation</td>
-                            <td>**</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h3 id="order-of-operations">Order of Operations</h3>
-                <p>When evaluating any arithmetic statement, PHP will follow the <strong>order of operations</strong>.
-                </p>
-                <p>Depending upon where you learned basic math, you may be familiar with either the acronym
-                    &#39;BEDMAS&#39; or &#39;PEMDAS&#39;. These acronyms are a way of remembering the steps we have to
-                    take in order to solve complex arithmetic equations. </p>
-                <ol>
-                    <li>
-                        <p>Parenthesis, brackets, and braces.</p>
-                    </li>
-                    <li>
-                        <p>Exponents. </p>
-                    </li>
-                    <li>
-                        <p>Multiplication and division, including fractions. </p>
-                    </li>
-                    <li>
-                        <p>Addition and subtraction. </p>
-                    </li>
-                </ol>
-                <pre><code class="lang-PHP">    echo <span class="hljs-number">5</span> * <span class="hljs-number">6</span> + <span class="hljs-number">3</span> - <span class="hljs-number">1</span>; <span class="hljs-comment">// The output will be 32.</span>
-    echo <span class="hljs-number">5</span> * (<span class="hljs-number">6</span> + <span class="hljs-number">3</span>) - <span class="hljs-number">1</span>; <span class="hljs-comment">// The output will be 44.</span>
-    echo (<span class="hljs-number">5</span> * <span class="hljs-number">6</span>) + <span class="hljs-number">3</span> - <span class="hljs-number">1</span>; <span class="hljs-comment">// The output will be 32.</span>
-    echo <span class="hljs-number">5</span> ** <span class="hljs-number">2</span> * <span class="hljs-number">6</span> + <span class="hljs-number">3</span> - <span class="hljs-number">1</span>; <span class="hljs-comment">// The output will be 152.</span>
-    echo <span class="hljs-number">5</span> ** <span class="hljs-number">2</span> * (<span class="hljs-number">6</span> + <span class="hljs-number">3</span>) - <span class="hljs-number">1</span>; <span class="hljs-comment">// The output will be 224.</span>
-</code></pre>
-            </section>
+            <div class="container">
+                <div class="row py-5">
+                    <div class="col-3">
+                        <!-- Table of Contents -->
+                        <h2 class="fw-light mb-4">Contents</h2>
+                        <nav id="toc" class="list-group">
+                            <a href="#php-basics" class="list-group-item list-group-item-action">PHP Basics</a>
+                            <a href="#variables" class="list-group-item list-group-item-action">Variables</a>
+                            <a href="#" class="list-group-item list-group-item-action">Data Types</a>
+                            <a href="#" class="list-group-item list-group-item-action">Arithmetic</a>
+                            <a href="#" class="list-group-item list-group-item-action">Comparison Operators</a>
+                            <a href="#" class="list-group-item list-group-item-action">Logical Operators</a>
+                            <a href="#" class="list-group-item list-group-item-action">Control Structures</a>
+                            <a href="#" class="list-group-item list-group-item-action">Loops</a>
+                        </nav>
+                    </div> <!-- end of TOC -->
+                    
+                    <!-- Main Content (Notes) -->
+                    <div class="col-9">
+                        <div data-bs-spy="scroll" data-bs-target="#toc" data-bs-smooth-scroll="true" class="scrollspy" tabindex="0">
+                        <!-- PHP Basics -->
+                        <section id="php-basics" class="container pb-5">
+
+                            <h2>PHP Basics</h2>
+
+                            <p>PHP is a programming language that allows you to add back-end functionality to your web applications
+                                and to create dynamic websites. It will often work alongside other languages that you have already
+                                learned, such as HTML, CSS, JavaScript, and SQL.</p>
+                            <p>PHP is a <strong>server-side language</strong>, which means that a server (or a remote computer) runs
+                                the PHP script and spits out the results to the user&#39;s browser. Because this processing is all
+                                done on the &#39;back-end&#39; (unlike HTML, CSS, and JavaScript), the user cannot see the code and
+                                its underlying logic.</p>
+                            <p>This means that we can write more secure code. Because everything is not exposed in the browser, we
+                                can start handling things like passwords and sensitive data. It also means that we can start making
+                                certain HTML components, like forms, have some sort of functionality. We can finally take user
+                                input, process it, and <em>do something</em> with it.</p>
+
+                            <h3 id="getting-started" class="pt-4">Getting Started</h3>
+
+                            <p>So, what do we need in order to make PHP work? </p>
+                            <ol>
+                                <li>We need a PHP-enabled server. This means that a PHP engine must be installed on it.
+                                </li>
+                                <li>In order for PHP to be processed, it must be written in a file with the <code>.php</code>
+                                    file extension; it will not work inside of a <code>.html</code> file.
+                                </li>
+                                <li>All PHP must go between <code>&lt;?php ?&gt;</code> tags; otherwise, it will be treated as
+                                    HTML.
+                                </li>
+                            </ol>
+                        </section>
+
+                        <!-- PHP Variables -->
+                        <section id="variables" class="container pb-5">
+
+                            <hr class="pb-5">
+
+                            <h2 class="py-3">Variables</h2>
+                            <p>Variables are a way of storing something (a value) so that we can reference or do something with it
+                                later. In PHP, we can store names, numbers, and all sorts of important data. </p>
+
+                            <p>In PHP, all variables must start with a <code>$</code>, followed by a letter or an underscore, then
+                                an alphanumeric character string.</p>
+
+                            <pre><code class="lang-PHP">    $name = <span class="hljs-string">'Jack Pott'</span><span class="hljs-comment">;</span>
+                $age = <span class="hljs-number">42</span><span class="hljs-comment">;</span>
+            </code></pre>
+
+                            <p>In this example, PHP knows that <code>$name</code> is actually <code>Jack Pott</code> because it has
+                                been <strong>assigned</strong> that value with the equals sign.</p>
+
+                            <p>We can change or manipulate these values later on in the program, hence the name <em>variables</em>;
+                                however, PHP also has something called <strong>constants</strong>, which is a variable whose value
+                                is immutable or cannot be changed at runtime. </p>
+
+                            <pre><code class="lang-PHP">    <span class="hljs-class"><span class="hljs-keyword">define</span></span>(<span class="hljs-string">'AGE'</span>, <span class="hljs-number">42</span>);
+            </code></pre>
+
+                            <p>Note that constants are case-sensitive and must be all uppercase. </p>
+
+                            <h3 class="py-3">Reserved Words</h3>
+
+                            <p>When initialising a variable or defining a constant, keep in mind that there&#39;s a set of
+                                predefined values that developers cannot use. These are known as the language&#39;s reserved words
+                                or predefined variables. </p>
+
+                            <p><a href="https://www.php.net/manual/en/reserved.constants.php">See Reserved Words in PHP</a></p>
+
+                        </section>
+
+                        <!-- Data Types -->
+                        <section id="data-types" class="container pb-5">
+
+                            <hr class="pb-5">
+
+                            <h2 class="py-3">Data Types in PHP</h2>
+
+                            <p>Computers are very specific about how different types of data are treated. In some programming
+                                languages, when you delare or initialise a variable, you need to explicitly state what type of data
+                                you want, how many characters it should be, or sometimes even how much memory should be reserved for
+                                it. </p>
+
+                            <table class="table table-striped py-5">
+                                <thead>
+                                    <tr>
+                                        <th>Data Type</th>
+                                        <th>Definition</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Characters</td>
+                                        <td>Single letters, numbers, or symbols (i.e. glyphs).</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Strings</td>
+                                        <td>A collection of characters.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Integers</td>
+                                        <td>Whole number values. Can use math with them.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Floats</td>
+                                        <td>Decimal number values.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Booleans</td>
+                                        <td>A value that can only be TRUE or FALSE.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Array</td>
+                                        <td>A collection of data that can either be numbered (indexed) or act as key-value pairs
+                                            (associated).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Fortunately, PHP handles most of this for us. It will figure out what a variable is and how we want
+                                to use it for us. Therefore, we call PHP a <strong>weak type language</strong>. </p>
+                        </section>
+
+                        <!-- Math -->
+                        <section class="container pb-5">
+
+                            <hr class="pb-5">
+
+                            <h2 id="basic-arithmetic" class="py-3">Basic Arithmetic</h2>
+
+                            <table class="table table-striped py-5">
+                                <thead>
+                                    <tr>
+                                        <th>Type of Operation</th>
+                                        <th>Symbol (Operator)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Addition</td>
+                                        <td>+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subtraction</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Multiplication</td>
+                                        <td>*</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Division</td>
+                                        <td>/</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Modulus</td>
+                                        <td>%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Exponentiation</td>
+                                        <td>**</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h3 id="order-of-operations" class="py-3">Order of Operations</h3>
+                            <p>When evaluating any arithmetic statement, PHP will follow the <strong>order of operations</strong>.
+                            </p>
+
+                            <p>Depending upon where you learned basic math, you may be familiar with either the acronym
+                                &#39;BEDMAS&#39; or &#39;PEMDAS&#39;. These acronyms are a way of remembering the steps we have to
+                                take in order to solve complex arithmetic equations. </p>
+                            <ol>
+                                <li>
+                                    <p>Parenthesis, brackets, and braces.</p>
+                                </li>
+                                <li>
+                                    <p>Exponents. </p>
+                                </li>
+                                <li>
+                                    <p>Multiplication and division, including fractions. </p>
+                                </li>
+                                <li>
+                                    <p>Addition and subtraction. </p>
+                                </li>
+                            </ol>
+
+                            <pre><code class="lang-PHP">    echo <span class="hljs-number">5</span> * <span class="hljs-number">6</span> + <span class="hljs-number">3</span> - <span class="hljs-number">1</span>; <span class="hljs-comment">// The output will be 32.</span>
+                echo <span class="hljs-number">5</span> * (<span class="hljs-number">6</span> + <span class="hljs-number">3</span>) - <span class="hljs-number">1</span>; <span class="hljs-comment">// The output will be 44.</span>
+                echo (<span class="hljs-number">5</span> * <span class="hljs-number">6</span>) + <span class="hljs-number">3</span> - <span class="hljs-number">1</span>; <span class="hljs-comment">// The output will be 32.</span>
+                echo <span class="hljs-number">5</span> ** <span class="hljs-number">2</span> * <span class="hljs-number">6</span> + <span class="hljs-number">3</span> - <span class="hljs-number">1</span>; <span class="hljs-comment">// The output will be 152.</span>
+                echo <span class="hljs-number">5</span> ** <span class="hljs-number">2</span> * (<span class="hljs-number">6</span> + <span class="hljs-number">3</span>) - <span class="hljs-number">1</span>; <span class="hljs-comment">// The output will be 224.</span>
+            </code></pre>
+
+                        </section>
+
+                        <!-- Comparison Operators -->
+                        <section class="container pb-5">
+
+                            <hr class="pb-5">
+                            <h2 id="comparison-operators">Comparison Operators</h2>
+                            <p>Determining whether something is TRUE or FALSE is the root of all decision making in programming
+                                languages. Comparison operators, also known as boolean operators, allow us to compare variables or
+                                other values and evaluate them.</p>
+                            <p><br></p>
+                            <h3 id="equality">Equality</h3>
+                            <p>We can evaluate equality with <code>==</code>. This will check to see whether the values on either
+                                side of the operator are equivalents. </p>
+                            <pre><code class="lang-PHP">    <span class="hljs-number">42</span> == <span class="hljs-number">42</span>; <span class="hljs-comment">// This would evaluate as TRUE.</span>
+                <span class="hljs-number">2</span> + <span class="hljs-number">2</span> == <span class="hljs-number">5</span>; <span class="hljs-comment">// This would evaluate as FALSE.</span>
+                '<span class="hljs-number">1</span>' == <span class="hljs-number">1</span>; <span class="hljs-comment">// This would evaluate as TRUE.</span>
+            </code></pre>
+                            <p>In our last example, we compared a character to an integer; because PHP is a weak-typed language,
+                                they would be considered equal and the statement would evaluate as true.</p>
+                            <p>So, what if we want to avoid that? We can use an identical comparison operator, or <code>===</code>,
+                                which will also check for data types.</p>
+                            <pre><code class="lang-PHP">    <span class="hljs-number">1</span> === <span class="hljs-number">1</span>; <span class="hljs-comment">// This would evaluate as TRUE.</span>
+                '<span class="hljs-number">1</span>' === <span class="hljs-number">1</span>; <span class="hljs-comment">// This would evaluate as FALSE.</span>
+            </code></pre>
+                            <p><br></p>
+                            <h3 id="greater-than-less-than">Greater Than &amp; Less Than</h3>
+                            <p>When dealing with numbers, we can also compare their sizes.</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center">Operator</th>
+                                        <th>Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:center">&gt;</td>
+                                        <td>greater than</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center">&lt;</td>
+                                        <td>less than</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center">&gt;=</td>
+                                        <td>greater than or equal to</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center">&lt;=</td>
+                                        <td>less than or equal to</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Let&#39;s look at a few examples.</p>
+                            <pre><code class="lang-PHP">    <span class="hljs-number">2</span> &gt; <span class="hljs-number">2</span>; <span class="hljs-comment">// This would evaluate as FALSE.</span>
+                <span class="hljs-number">2</span> &gt;= <span class="hljs-number">2</span>; <span class="hljs-comment">// This would evaluate as TRUE.</span>
+            </code></pre>
+                            <p><br></p>
+                            <h3 id="not-or-negation">NOT or Negation</h3>
+                            <p>We can also check to see if two values are not equal with the negation or not operator. </p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center">Operator</th>
+                                        <th>Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:center">!=</td>
+                                        <td>not equal</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center">!==</td>
+                                        <td>not identical</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center">&lt;&gt;</td>
+                                        <td>alternative syntax for not equal</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Let&#39;s look at an example.</p>
+                            <pre><code class="lang-PHP">    <span class="hljs-number">7</span> != <span class="hljs-number">7</span>; <span class="hljs-comment">// This would evaluate as FALSE.</span>
+            </code></pre>
+                            <p>We can also negate statements within parentheses. </p>
+                            <pre><code class="lang-PHP">    !(<span class="hljs-number">7</span> == <span class="hljs-number">7</span>); // This <span class="hljs-keyword">is</span> looking <span class="hljs-keyword">to</span> see <span class="hljs-keyword">if</span> what<span class="hljs-symbol">'s</span> inside <span class="hljs-keyword">of</span> the () <span class="hljs-keyword">is</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">TRUE</span>, <span class="hljs-keyword">or</span> <span class="hljs-literal">FALSE</span>.
+            </code></pre>
+                            <p><br></p>
+
+                        </section>
+
+                        <!-- Logical Operators -->
+                        <section class="container pb-5">
+
+                                <hr class="pb-5">
+
+                            <h2 id="logical-operators">Logical Operators</h2>
+                            <p>Logical operators combine comparison statements and try to evaluate their overall truthfulness. </p>
+                            <p>No matter how many comparison statements are included, this will still result in only one final
+                                boolean evaluation (TRUE or FALSE).</p>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center">Operator</th>
+                                        <th>Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:center">&amp;&amp;</td>
+                                        <td>AND (all parts of the statements must be TRUE)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center">||</td>
+                                        <td>OR (at least one of the statements must be TRUE)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center">XOR</td>
+                                        <td>EXCLUSIVE OR (one or the other must be TRUE, but not both)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Note that you can use <code>AND</code> and <code>OR</code> as logical operators in PHP; however,
+                                their precedence is <em>lower than</em> <code>=</code>, meaning assignment statements will be
+                                evaluated first, so this can lead to some unintended results. </p>
+                            <p><br></p>
+
+                        </section>
+
+                        <!-- Control Structures -->
+                        <section class="container pb-5">
+
+                                <hr class="pb-5">
+                            <h2 id="control-structures">Control Structures</h2>
+                            <p>Control structures are the backbone of decision-making in programs. They will execute certain parts
+                                of the code only if certain conditions are met.</p>
+                            <p>An IF statement is one of the most common control structures. It will check to see if a certain
+                                condition is TRUE; if it is, it will execute a block of code. </p>
+                            <pre><code class="lang-PHP">    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$name</span> == <span class="hljs-string">"Honey"</span>) {
+                    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Honey, I'm home!"</span>;
+                }
+            </code></pre>
+                            <p>In this case, nothing will happen if the condition evaluates as FALSE. Here, we can add an ELSE
+                                statement. If the first condition is not met, the second block of code will be executed. </p>
+                            <pre><code class="lang-PHP">    if (<span class="hljs-string">$n</span>ame == <span class="hljs-comment">"Honey"</span>) {
+                    echo <span class="hljs-comment">"Honey, I'm home!"</span>;
+                } else {
+                    echo <span class="hljs-comment">"Who are you, and what are you doing in my house?"</span>;
+                }
+            </code></pre>
+                            <p>If we want to add a little more complexity, we could add an nested IF statement. This will only
+                                execute if both conditions are met (i.e. evaluated as TRUE).</p>
+                            <pre><code class="lang-PHP">    <span class="hljs-keyword">if</span> ($name == <span class="hljs-string">"Honey"</span>) {
+                    <span class="hljs-keyword">echo</span> <span class="hljs-string">"Honey, I'm home!"</span>;
+                    <span class="hljs-comment">// This is one level in. We know the $name is "Honey".</span>
+                    <span class="hljs-keyword">if</span> !($face == <span class="hljs-string">"Dirty"</span>) {
+                        <span class="hljs-keyword">echo</span> <span class="hljs-string">"Who's a good girl?"</span>;
+                    } <span class="hljs-keyword">else</span> {
+                        <span class="hljs-keyword">echo</span> <span class="hljs-string">"Have you been digging again?"</span>;
+                    }
+                <span class="hljs-comment">// We're back to the outermost level. The $name is NOT "Honey".</span>
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">echo</span> <span class="hljs-string">"Who are you, and what are you doing in my house?"</span>;
+                }
+            </code></pre>
+                            
+                            <h3 id="yoda-conditions">Yoda Conditions</h3>
+                            <p>Although they&#39;re a little harder to read, many developers like to write something called
+                                &#39;Yoda Conditions&#39;. This means that when writing a condition, the value goes on the left-hand
+                                side and the variable goes on the right-hand side. </p>
+                            <pre><code class="lang-PHP">    <span class="hljs-keyword">if</span> (<span class="hljs-string">"Honey"</span> == <span class="hljs-variable">$name</span>) {
+                    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Honey, I'm home!"</span>;
+                }
+            </code></pre>
+                            <p>This is flipped around from when we assign values to a variable -- much like speaking backwards. This
+                                is to help prevent you from accidentally assigning a value rather than evaluating it. </p>
+                            
+                            <h3 id="switch-statements">Switch Statements</h3>
+                        </section>
+                        </div> <!-- end of .scrollspy -->
+                    </div> <!-- end of .col -->
+                </div> <!-- end of .row -->
+            </div> <!-- end of .container -->
         </main>
         <footer class="bg-dark text-white-50">
             <div class="container py-5">

@@ -1,0 +1,16 @@
+.banner {
+    background: url('../img/splash.webp') center / cover fixed;
+}
+
+.banner > div {
+    text-shadow: 2px 2px rgba(0,0,0,0.6);
+}
+
+.banner .lead {
+    max-width: 65ch;
+}
+
+.scrollspy {
+    max-height: calc(100vh - 8rem);
+    overflow-y: scroll;
+}
