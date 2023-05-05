@@ -13,9 +13,9 @@
 
 <body class="d-flex flex-column min-vh-100 justify-content-between">
     <header>
-        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Course Resources</a>
+                <a class="navbar-brand" href="index.html">Course Resources <i class="bi bi-pencil"></i> </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -32,17 +32,13 @@
                                 Courses
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">COMP 1017</a></li>
-                                <li><a class="dropdown-item" href="#">DMIT 1530</a></li>
-                                <li><a class="dropdown-item" href="#">DMIT 2025</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">See All Courses</a></li>
+                                <li><a class="dropdown-item" href="comp1017.html">COMP 1017</a></li>
+                                <li><a class="dropdown-item" href="dmit1530.html">DMIT 1530</a></li>
+                                <li><a class="dropdown-item" href="dmit2025.html">DMIT 2025</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="about.html">About</a>
                         </li>
                     </ul>
                 </div>
@@ -50,10 +46,23 @@
         </nav>
     </header>
 
-    <footer class="bg-dark text-white-50 text-center">
+    <footer class="bg-dark text-white-50">
         <div class="container py-5">
-            <p>This website is meant to serve as a secondary resource for DMIT students at NAIT.</p>
-            <p>For the latest information on each topic, please refer to the official documentation for the language or software in question.</p>
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col mb-3 mb-lg-0">
+                    <h2 class="fs-4 fw-light">Contact</h2>
+                    <p><a href="mailto:vwatson@nait.ca" class="link-warning nav-link"><i class="bi bi-envelope-fill"></i> vwatson@nait.ca</a></p>
+                    <p><a href="https://github.com/EubhaWatson" class="link-warning nav-link"><i class="bi bi-github"></i> @EubhaWatson on GitHub</a></p>
+                    <p><a href="https://codepen.io/eubhawatson" class="link-warning nav-link"><i class="bi bi-code-slash"></i> @EubhaWatson on CodePen</a></p>
+                </div>
+                <div class="col">
+                    <h3 class="fs-4 fw-light">Disclaimer</h3>
+                    <small>
+                        <p>This website is meant to serve as a supplementary resource for DMIT students at NAIT. Primary resources, in-class demonstrations, assessments, and syllabi can be found on your course's Moodle instance.</p>
+                        <p>For the latest information on each topic, please refer to the official documentation for the language or software in question.</p>
+                    </small>
+                </div>
+            </div>            
         </div>
     </footer>
     <!-- Bootstrap JS -->
